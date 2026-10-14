@@ -1105,6 +1105,16 @@ section[id]{scroll-margin-top:72px}
 .ai-uses{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
 .ai-uses span{padding:5px 10px;border:1px solid var(--line);border-radius:99px;background:var(--paper);font-size:13.5px}
 
+/* ---------- client logos ---------- */
+.brand{display:block;width:auto;max-width:100%;color:var(--ink)}
+.brand-s1{aspect-ratio:736/258;height:30px}
+.brand-oo{aspect-ratio:3763.2/692.2;height:19px}
+.case-text .brand{margin-bottom:16px}
+.cs-hero .brand{margin-top:clamp(28px,4vw,52px)}
+.cs-hero .brand-s1.lg{height:42px}
+.cs-hero .brand-oo.lg{height:27px}
+.cs-hero .brand + .cs-meta{margin-top:18px}
+
 /* ---------- responsive ---------- */
 @media (max-width:900px){
   .case,.about-grid{grid-template-columns:minmax(0,1fr)}
@@ -1158,6 +1168,7 @@ section[id]{scroll-margin-top:72px}
 </style>
 
 <span id="top"></span>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="logo-softwareone" viewBox="0 0 736 258"><g fill="currentColor"><path d="M615.407 0C687.056 0 736 53.8483 736 132.355V148.627H561.755C566.969 184.19 587.824 204.487 619.107 204.487C641.981 204.487 658.464 193.92 663.51 175.803H732.636C722.881 225.121 677.133 258 618.099 258C551.832 258 500.534 215.726 490.274 152.652V250.787H415.598V108.702C415.598 78.1716 400.46 61.2285 373.382 61.2285C347.986 61.2285 331.167 80.0169 331.167 108.702V250.787H256.322V153.659C244.717 214.217 191.232 258 129.338 258C58.0254 258 1.01675e-05 200.126 7.62939e-06 129C7.62939e-06 57.7063 58.0254 0.000217708 129.338 0C191.4 0 244.717 43.783 256.322 104.341V7.21289H329.821V37.0732C350.34 11.4074 373.214 0 403.656 0C457.141 8.18526e-05 490.274 38.5825 490.274 100.985V105.515C500.366 42.1053 550.15 0.000158628 615.407 0ZM24.9463 109.603C16.8685 109.603 11.1895 113.813 11.1895 119.779C11.1895 125.322 14.4998 128.109 22.7598 129.502L26.3731 130.107C29.0758 130.562 30.4727 131.804 30.4727 133.772C30.4726 136.438 28.59 137.952 25.3408 137.952C21.7574 137.952 20.0264 136.771 19.3887 133.894H10.3691C11.0069 140.254 16.6554 144.04 25.4619 144.04C33.8737 144.04 39.3095 139.921 39.3096 133.561C39.3096 127.866 36.0908 124.959 28.2256 123.565L24.3076 122.868C21.3625 122.353 20.0265 121.263 20.0264 119.355C20.0264 116.902 22 115.236 24.8848 115.236C27.8302 115.236 29.8041 116.508 30.2598 118.749H38.915C37.9128 112.752 33.0844 109.603 24.9463 109.603ZM58.6543 109.603C48.6633 109.603 41.7695 116.69 41.7695 126.928C41.7697 137.256 48.39 144.04 58.4111 144.04C68.4324 144.04 75.2041 137.043 75.2041 126.654C75.2039 116.417 68.5842 109.603 58.6543 109.603ZM231.932 109.603C221.941 109.603 215.412 116.478 215.412 126.928C215.412 137.225 222.123 144.04 232.296 144.04C239.797 144.04 245.78 139.981 247.146 134.015H238.37C237.672 136.619 235.698 137.952 232.479 137.952C227.832 137.952 225.342 135.075 224.734 129.048H247.602V127.442C247.602 116.629 241.437 109.603 231.932 109.603ZM176.48 109.603C168.342 109.603 163.271 113.086 162.572 119.204H171.136C171.348 116.751 173.353 115.327 176.571 115.327C179.638 115.327 181.37 116.781 181.37 119.386C181.37 122.142 179.457 123.444 174.112 124.322C164.638 125.867 160.72 128.896 160.72 134.681C160.72 140.375 164.789 143.858 171.47 143.858C175.934 143.858 179.274 142.041 181.795 138.194C181.947 140.102 182.19 141.527 182.615 143.041H191.36C190.297 140.679 190.085 139.527 190.085 136.165V123.293C190.085 114.116 185.621 109.603 176.48 109.603ZM91.6641 96.7295C84.3456 96.7295 81.005 99.8495 81.0049 106.725V110.602H75.2344V117.054H81.0049V143.041H89.9024V117.054H99.9238V134.075C99.9238 140.557 102.626 143.132 109.52 143.132C111.463 143.132 112.374 143.07 114.439 142.798V136.135C113.316 136.226 112.951 136.256 112.223 136.256C109.581 136.256 108.821 135.498 108.821 132.772V117.054H116.565L123.823 143.041H132.721L138.339 121.354L144.078 143.041H152.703L161.935 110.602H152.976L149.605 126.049C149.302 127.472 148.876 130.108 148.087 135.862C147.662 132.833 146.751 128.29 146.144 126.049L141.982 110.844H135.12L130.959 126.109C130.169 129.047 129.441 132.621 128.925 136.195C128.591 133.045 128.014 129.29 127.315 126.079L123.944 110.602H108.821V100.455H99.9238V110.602H89.9024V106.785C89.9025 104.363 90.783 103.575 93.5156 103.575C94.1533 103.575 94.4574 103.575 95.0039 103.636V96.9727C93.9108 96.791 93.1518 96.7295 91.6641 96.7295ZM213.073 110.057C209.369 110.057 206.636 112.268 204.662 116.902V110.602H195.703V143.041H204.844V125.262C204.844 120.567 207.85 117.599 212.618 117.599C213.772 117.599 214.41 117.629 215.108 117.72V110.299C214.38 110.147 213.498 110.057 213.073 110.057ZM181.431 130.773C181.431 135.135 178.758 138.013 174.658 138.013C171.348 138.013 169.617 136.559 169.617 133.772C169.617 131.168 171.348 129.835 175.934 128.927C178.819 128.351 179.973 128.018 181.431 127.352V130.773ZM58.4717 116.599C63.2697 116.599 65.912 120.173 65.9121 126.715C65.9121 133.439 63.3001 137.044 58.4717 137.044C53.6129 137.044 51.0625 133.499 51.0625 126.775C51.0626 120.203 53.7041 116.599 58.4717 116.599ZM231.75 115.539C235.789 115.539 237.793 117.962 238.37 123.505H224.887C225.616 117.902 227.65 115.539 231.75 115.539ZM613.894 51.499C587.488 51.4992 568.988 69.6164 562.933 101.656H663.006C658.296 69.9517 640.131 51.499 613.894 51.499Z"/></g></symbol><symbol id="logo-oomnitza" viewBox="0 0 3763.2 692.2"><g fill="currentColor"><path d="M1493.9,204.6c-72.2,0-129.3,26.3-169.6,70.3c-33.8-46.9-88.1-70.3-149.2-70.3c-57.1,0-103.2,21.5-132.2,51.6l-5.6-2v-40.3 h-135v469h135v-317c22.5-30,61.9-50.6,104-50.6c46,0,81.6,27.1,81.6,90v277.7h135V390.2c0-11.3-0.8-23.4-2.8-33.8 c24.5-29.9,63.8-41.2,105.1-41.2c45.9,0,81.5,28.1,81.5,93.7v273.9h135.1V409C1676.9,273,1597,204.6,1493.9,204.6"/><path d="M2036.4,204.6c-70.3,0-124.7,27.1-156.7,64.7l-5.6-1.8v-53.5h-135v469h135V356.4c25.3-28.1,63.7-41.2,105.9-41.2 c49.6,0,90.9,28.1,90.9,93.7v273.9h135V401.5C2206,271.2,2129.2,204.6,2036.4,204.6"/><path d="M2406,70.4c0,38.9-31.5,70.4-70.4,70.4c-38.9,0-70.4-31.5-70.4-70.4c0-38.9,31.5-70.4,70.4-70.4 C2374.4,0,2406,31.5,2406,70.4 M2268.4,682.9h135.1v-469h-135.1V682.9z"/><path d="M2776.6,573c-21.1,0-38.6,0.1-60.1,0.1c-31.5,0-54.3-18.1-54.3-63.2V317.1l114.4,0V213.9l-114.4,0v-150h-135v150h-68.4 v103.2h68.4v200.3c0,111.5,74.1,168.1,174.4,168.1h75.1V573z"/><polygon points="3013.7,572.2 3010.8,567.5 3238.6,283.3 3238.6,213.9 2842,213.9 2842,317.7 3055.8,317.7 3058.6,322.4 2843.6,573 2843.6,682.9 3248.1,682.9 3248.1,572.2"/><path d="M3628,213.9V243l-4.6,2.9c-30-24.5-70.4-41.3-129.4-41.3c-132.2,0-235.4,107.8-235.4,243.7c0,136,99.4,243.9,225.9,243.9 c60.1,0,108.9-23.5,137.9-56.3l5.6,1.9v45h135.1v-469H3628z M3628,517.7c-24.3,47-69.4,63.8-117.2,63.8 c-64.6,0-117.2-56.2-117.2-133.2c0-77.7,52.6-133.1,117.2-133.1c47.8,0,88.1,12.1,117.2,31.8V517.7z"/><path d="M612.8,204.2c-57,0-112,20.1-155.8,56.7l84,84.8c21.2-15,45.8-23,71.8-23c69.1,0,125.3,56.2,125.3,125.3 s-56.2,125.3-125.3,125.3c-69.1,0-125.3-56.2-125.3-125.3c0-26.3,8.2-51.5,23.7-73l1.7-2.4l-97.2-97.1c-46-45.9-107.1-71.2-172-71.2 C109.4,204.2,0,313.6,0,448c0,134.4,109.4,243.8,243.8,243.8c57,0,112-20.1,155.8-56.6l-84-84.9c-21.2,15-45.8,23-71.8,23 c-69.1,0-125.3-56.2-125.3-125.3s56.2-125.3,125.3-125.3S369,378.9,369,448c0,26.3-8.2,51.5-23.7,73.1l-1.7,2.4l81.5,81.5l15.4,15.3 c46.1,46.1,107.3,71.5,172.3,71.5c134.4,0,243.8-109.4,243.8-243.8C856.6,313.6,747.2,204.2,612.8,204.2"/></g></symbol></defs></svg>
 <header class="nav">
   <div class="wrap nav-in">
     <a class="mark" href="#top">Catherine Butler</a>
@@ -1207,7 +1218,8 @@ section[id]{scroll-margin-top:72px}
     <!-- SoftwareOne -->
     <article class="case">
       <div class="case-text">
-        <p class="case-meta mono"><span>SoftwareOne Marketplace</span><span>Senior Product Designer</span><span>Shipped</span></p>
+        <svg class="brand brand-s1" viewBox="0 0 736 258" role="img" aria-label="SoftwareOne"><use href="#logo-softwareone"/></svg>
+        <p class="case-meta mono"><span>Marketplace</span><span>Senior Product Designer</span><span>Shipped</span></p>
         <h3><a class="case-link" href="#subscriptions">Self-service subscriptions for enterprise customers</a></h3>
         <p class="desc">One subscription, three actors — customers, vendors and internal operations. I mapped the shared states and ownership behind every subscription so each person could see what they own, what’s safe to change, and who acts next.</p>
         <p class="proof"><b>Impact</b> — the 4 most-viewed marketplace pages are all ones I designed, drawing about 1 in 5 page views; the commerce pages hold attention longer than the site average (Google Analytics).</p>
@@ -1229,7 +1241,8 @@ section[id]{scroll-margin-top:72px}
     <!-- Oomnitza design system -->
     <article class="case">
       <div class="case-text">
-        <p class="case-meta mono"><span>Oomnitza</span><span>Design systems &amp; AI</span><span>2026</span></p>
+        <svg class="brand brand-oo" viewBox="0 0 3763.2 692.2" role="img" aria-label="Oomnitza"><use href="#logo-oomnitza"/></svg>
+        <p class="case-meta mono"><span>Design systems &amp; AI</span><span>2026</span></p>
         <h3><a class="case-link" href="#designsystem">From design system to AI-assisted prototyping</a></h3>
         <p class="desc">During the MUI → shadcn/ui migration, I partnered with frontend engineering to strengthen Storybook, then built a governed Claude workflow grounded in implemented components, exact GitHub tokens and page-level patterns.</p>
         <p class="proof"><b>The loop</b> — every prototype became a test of the system: generate, compare with production, find the missing context, improve the source, regenerate.</p>
@@ -1251,7 +1264,8 @@ section[id]{scroll-margin-top:72px}
     <!-- Data Health -->
     <article class="case">
       <div class="case-text">
-        <p class="case-meta mono"><span>Oomnitza</span><span>Senior Product Designer</span><span>Discovery → MVP</span></p>
+        <svg class="brand brand-oo" viewBox="0 0 3763.2 692.2" role="img" aria-label="Oomnitza"><use href="#logo-oomnitza"/></svg>
+        <p class="case-meta mono"><span>Senior Product Designer</span><span>Discovery → MVP</span></p>
         <h3><a class="case-link" href="#datahealth">Data Health: knowing which data you can trust</a></h3>
         <p class="desc">IT teams lean on Oomnitza at high-stakes moments — audits, onboarding, offboarding. I framed the problem with stakeholders, mapped the admin’s tasks, and prototyped an MVP that flags stale data before automation acts on it.</p>
         <p class="proof"><b>Today</b> — 17 subtasks across 5 screens and 3 people, starting after a helpdesk ticket.<br><b>Proposed</b> — 6 steps in one place, before the next workflow runs.</p>
@@ -1347,7 +1361,8 @@ section[id]{scroll-margin-top:72px}
 <main id="view-case" class="cs" hidden>
   <header class="cs-hero wrap">
     <a class="back mono" href="#work">← All work</a>
-    <p class="cs-meta mono"><span>Case study</span><span>SoftwareOne Marketplace</span><span>2023–2026</span></p>
+    <svg class="brand brand-s1 lg" viewBox="0 0 736 258" role="img" aria-label="SoftwareOne"><use href="#logo-softwareone"/></svg>
+    <p class="cs-meta mono"><span>Case study</span><span>Marketplace</span><span>2023–2026</span></p>
     <h1 class="cs-title"><span class="ln">Self-service subscriptions</span> <span class="ln">for enterprise customers</span></h1>
     <p class="cs-lede">Designing one subscription experience for customers, vendors and internal teams — without creating ownership or agreement conflicts.</p>
     <dl class="cs-facts">
@@ -1697,7 +1712,8 @@ section[id]{scroll-margin-top:72px}
 <main id="view-dh" class="cs" hidden>
   <header class="cs-hero wrap">
     <a class="back mono" href="#work">← All work</a>
-    <p class="cs-meta mono"><span>Case study</span><span>Oomnitza</span><span>2026</span></p>
+    <svg class="brand brand-oo lg" viewBox="0 0 3763.2 692.2" role="img" aria-label="Oomnitza"><use href="#logo-oomnitza"/></svg>
+    <p class="cs-meta mono"><span>Case study</span><span>2026</span></p>
     <h1 class="cs-title"><span class="ln">Data Health: knowing which</span> <span class="ln">data you can trust</span></h1>
     <p class="cs-lede">When an integration quietly stops syncing, IT admins find out from a ticket — after automation has already acted on stale data. I designed a consequence layer that shows what a failure is about to cost, and lets admins act before it does.</p>
     <dl class="cs-facts">
@@ -1904,7 +1920,8 @@ section[id]{scroll-margin-top:72px}
 <main id="view-ds" class="cs" hidden>
   <header class="cs-hero wrap">
     <a class="back mono" href="#work">← All work</a>
-    <p class="cs-meta mono"><span>Case study</span><span>Oomnitza</span><span>2026</span></p>
+    <svg class="brand brand-oo lg" viewBox="0 0 3763.2 692.2" role="img" aria-label="Oomnitza"><use href="#logo-oomnitza"/></svg>
+    <p class="cs-meta mono"><span>Case study</span><span>2026</span></p>
     <h1 class="cs-title"><span class="ln">From design system to</span> <span class="ln">AI-assisted prototyping</span></h1>
     <p class="cs-lede">During Oomnitza’s migration from MUI to shadcn/ui, I partnered with frontend engineering to strengthen Storybook — then built a governed Claude workflow grounded in implemented components, exact GitHub tokens and product-level patterns.</p>
     <dl class="cs-facts">
