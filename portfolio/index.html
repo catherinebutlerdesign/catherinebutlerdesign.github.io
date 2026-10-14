@@ -6,7 +6,7 @@
 :root{
   --paper:#EDF1F2; --plate:#E5EBEE; --ink:#0F2747; --ink-2:#465E7C; --ink-3:#8296AD;
   --line:#C5D0DA; --grid:rgba(15,39,71,.06); --signal:#D4891A; --signal-soft:#F7E4C3;
-  --chart-hi:#B06F12; --pain:#B3362B; --bp-swo:#DCE5EF; --bp-back:rgba(15,39,71,.045); --signal-ring:rgba(212,137,26,.28); --signal-wash:rgba(212,137,26,.10); --signal-edge:rgba(212,137,26,.38);
+  --chart-hi:#B06F12; --pain:#B3362B; --logo-s1:#000000; --bp-swo:#DCE5EF; --bp-back:rgba(15,39,71,.045); --signal-ring:rgba(212,137,26,.28); --signal-wash:rgba(212,137,26,.10); --signal-edge:rgba(212,137,26,.38);
   --display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --serif:"Newsreader",Georgia,"Times New Roman",serif;
   --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
@@ -18,14 +18,14 @@
     color-scheme:dark;
     --paper:#0A1C34; --plate:#0D2240; --ink:#E6EDF1; --ink-2:#A2B5CA; --ink-3:#5F7896;
     --line:#1F3A5C; --grid:rgba(230,237,241,.05); --signal:#F0AE48; --signal-soft:#3B3220;
-    --chart-hi:#C9831F; --pain:#F08A7E; --bp-swo:#173458; --bp-back:rgba(230,237,241,.035); --signal-ring:rgba(240,174,72,.32); --signal-wash:rgba(240,174,72,.09); --signal-edge:rgba(240,174,72,.42);
+    --chart-hi:#C9831F; --pain:#F08A7E; --logo-s1:#FFFFFF; --bp-swo:#173458; --bp-back:rgba(230,237,241,.035); --signal-ring:rgba(240,174,72,.32); --signal-wash:rgba(240,174,72,.09); --signal-edge:rgba(240,174,72,.42);
   }
 }
 :root[data-theme="dark"]{
   color-scheme:dark;
   --paper:#0A1C34; --plate:#0D2240; --ink:#E6EDF1; --ink-2:#A2B5CA; --ink-3:#5F7896;
   --line:#1F3A5C; --grid:rgba(230,237,241,.05); --signal:#F0AE48; --signal-soft:#3B3220;
-    --chart-hi:#C9831F; --pain:#F08A7E; --bp-swo:#173458; --bp-back:rgba(230,237,241,.035); --signal-ring:rgba(240,174,72,.32); --signal-wash:rgba(240,174,72,.09); --signal-edge:rgba(240,174,72,.42);
+    --chart-hi:#C9831F; --pain:#F08A7E; --logo-s1:#FFFFFF; --bp-swo:#173458; --bp-back:rgba(230,237,241,.035); --signal-ring:rgba(240,174,72,.32); --signal-wash:rgba(240,174,72,.09); --signal-edge:rgba(240,174,72,.42);
 }
 
 html{scroll-behavior:smooth}
@@ -1106,7 +1106,9 @@ section[id]{scroll-margin-top:72px}
 .ai-uses span{padding:5px 10px;border:1px solid var(--line);border-radius:99px;background:var(--paper);font-size:13.5px}
 
 /* ---------- client logos ---------- */
-.brand{display:block;width:auto;max-width:100%;color:var(--ink)}
+.brand{display:block;width:auto;max-width:100%}
+.brand-s1{color:var(--logo-s1)}
+.brand-oo{color:#F4003C}
 .brand-s1{aspect-ratio:736/258;height:30px}
 .brand-oo{aspect-ratio:3763.2/692.2;height:19px}
 .case-text .brand{margin-bottom:16px}
