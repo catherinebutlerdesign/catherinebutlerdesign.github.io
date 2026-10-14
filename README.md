@@ -1,6 +1,6 @@
 # catherinebutlerdesign.github.io
 
-Portfolio of Catherine Butler, Senior Product Designer near Dublin.
+Portfolio of Catherine Butler, Senior Product Designer based in Dublin.
 Live at **https://catherinebutlerdesign.github.io**.
 
 ## Structure

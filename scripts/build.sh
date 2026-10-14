@@ -13,7 +13,7 @@ cp -R portfolio/img _site/img
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Catherine Butler, Senior Product Designer near Dublin. Complex B2B SaaS, made clear: case studies in subscription self-service, data trust, AI-assisted design systems and SquadCurve.">
+<meta name="description" content="Catherine Butler, Senior Product Designer based in Dublin. Complex B2B SaaS, made clear: case studies in subscription self-service, data trust, AI-assisted design systems and SquadCurve.">
 <meta property="og:title" content="Catherine Butler — Senior Product Designer">
 <meta property="og:description" content="Complex systems, made clear. Case studies in B2B SaaS, design systems and AI-assisted prototyping.">
 <meta property="og:type" content="website">
