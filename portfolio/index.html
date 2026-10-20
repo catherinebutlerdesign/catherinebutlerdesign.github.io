@@ -2415,6 +2415,9 @@ const router = (function(){
     const el = anchor && document.getElementById(anchor);
     if (el && anchor !== 'top') el.scrollIntoView({ behavior:'instant', block:'start' });
     else window.scrollTo({ top:0, behavior:'instant' });
+    // Lets the hosted build count each case study as its own page view.
+    const title = name === 'home' ? '' : (VIEWS[name].querySelector('h1')?.textContent || '').replace(/\s+/g, ' ').trim();
+    document.dispatchEvent(new CustomEvent('portfolio:view', { detail:{ name, title } }));
   }
   function go(name, anchor){
     if (name === current){

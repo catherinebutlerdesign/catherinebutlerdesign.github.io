@@ -14,6 +14,14 @@ Live at **https://catherinebutlerdesign.github.io**.
 
 Case studies are views inside the one page, reached by hash: `#subscriptions`, `#datahealth`, `#designsystem`, `#squadcurve`.
 
+## Analytics
+
+GA4 is added by `scripts/build.sh`, only to the hosted site (never the Claude artifact).
+Set the measurement ID in `GA_ID` at the top of that script; while it is the
+placeholder `G-XXXXXXXXXX`, no analytics code ships. Consent Mode defaults every
+storage type to denied, so no cookies are set. Each case study is reported as a
+virtual page, `/case-studies/<name>`.
+
 ## Preview locally
 
 ```bash
