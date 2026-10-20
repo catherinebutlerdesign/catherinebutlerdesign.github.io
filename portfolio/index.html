@@ -1117,6 +1117,18 @@ section[id]{scroll-margin-top:72px}
 .cs-hero .brand-oo.lg{height:27px}
 .cs-hero .brand + .cs-meta{margin-top:18px}
 
+/* ---------- data health: health report ---------- */
+.hr-h{margin:clamp(36px,5vw,56px) 0 0;font-weight:400;font-size:12px;color:var(--ink-2)}
+.hr-h + p{margin-top:10px}
+.hr-stack{display:grid;gap:12px;padding:clamp(12px,2vw,22px)}
+.hr-stack .pane{background:#fff;border-radius:8px;box-shadow:0 0 0 1px rgba(15,39,71,.12);overflow:hidden}
+.hr-stack img{display:block;width:100%;height:auto}
+.hr-note{margin-top:18px;padding-left:14px;border-left:2px solid var(--signal);font-size:15px;color:var(--ink-2)}
+.hr-list{margin-top:18px}
+.seg{max-width:100%;overflow-x:auto;scrollbar-width:none}
+.seg::-webkit-scrollbar{display:none}
+.seg button{white-space:nowrap}
+
 /* ---------- responsive ---------- */
 @media (max-width:900px){
   .case,.about-grid{grid-template-columns:minmax(0,1fr)}
@@ -1723,7 +1735,7 @@ section[id]{scroll-margin-top:72px}
       <div><dt>My contribution</dt><dd>Research synthesis, product framing, MVP prioritisation, journeys and flows, interactive prototyping</dd></div>
       <div><dt>Team</dt><dd>Product, Customer Success, internal IT, engineering and domain experts</dd></div>
       <div><dt>Stage</dt><dd>MVP prototype, validated with customers through CSMs</dd></div>
-      <div><dt>Prototype</dt><dd><a class="tlink" href="https://catbutt2019.github.io/datahealth/" target="_blank" rel="noopener">Try it live <span class="arr" aria-hidden="true">↗</span></a></dd></div>
+      <div><dt>Prototype</dt><dd><a class="tlink" href="https://catherinebutlerdesign.github.io/datahealth/" target="_blank" rel="noopener">Try it live <span class="arr" aria-hidden="true">↗</span></a></dd></div>
     </dl>
   </header>
 
@@ -1744,6 +1756,7 @@ section[id]{scroll-margin-top:72px}
       <a href="#dh-field" data-scroll>Field status</a>
       <a href="#dh-feasible" data-scroll>Feasibility</a>
       <a href="#dh-research" data-scroll>Research</a>
+      <a href="#dh-report" data-scroll>Health report</a>
       <a href="#dh-next" data-scroll>Next</a>
     </nav>
 
@@ -1858,7 +1871,7 @@ section[id]{scroll-margin-top:72px}
           <div class="note" data-note="dh-ov"><ul class="ticks dots"><li>The smallest number leads: 3 dependent actions at risk, with the time left before Okta next runs.</li><li>The headline banner says what is about to happen to the business, not that a connector failed.</li><li>Risk is shown as time where a deadline is known, and as uncertainty where it isn’t.</li></ul></div>
           <div class="note" data-note="dh-im" hidden><ul class="ticks dots"><li>Evidence, Impact and Verification follow the proposed steps in order.</li><li>Offboarding is stalled at step 4 of 6, waiting on employment status that hasn’t been confirmed for 38 hours.</li><li>Confidence reflects how recently the source wrote to the record — not whether the value is correct.</li></ul></div>
         </div>
-        <p style="margin-top:22px"><a class="btn" href="https://catbutt2019.github.io/datahealth/" target="_blank" rel="noopener">Try the live prototype <span class="arr" aria-hidden="true">↗</span></a></p>
+        <p style="margin-top:22px"><a class="btn" href="https://catherinebutlerdesign.github.io/datahealth/" target="_blank" rel="noopener">Try the live prototype <span class="arr" aria-hidden="true">↗</span></a></p>
       </section>
 
       <section id="dh-field" class="cs-sec">
@@ -1896,6 +1909,56 @@ section[id]{scroll-margin-top:72px}
           <div class="nq"><p>“I wouldn’t switch off someone else’s workflow.”<span class="who"><i class="pc maite">Maite</i><span class="p">! Anxiety</span><span>Respond</span></span></p><p>“Escalate should open a ticket in our tracker, not an email.”<span class="who"><i class="pc rory">Rory</i><span class="">· Need</span><span>Respond</span></span></p></div><span class="na" style="--k:0" aria-hidden="true"></span><div class="ni"><strong>The person who sees the risk often doesn’t own the fix</strong><span>Both personas · 2 nuggets</span></div><span class="na" style="--k:1" aria-hidden="true"></span><div class="nc"><strong>“Escalate only” option, and escalation opens a ticket</strong><span>Closes itself when the source completes a full run.</span></div><div class="nq"><p>“This ‘what changed’ table is basically my audit evidence.”<span class="who"><i class="pc maite">Maite</i><span class="">· Need</span><span>Verification</span></span></p><p>“Show me my problems: assets, licences, leavers.”<span class="who"><i class="pc maite">Maite</i><span class="">· Need</span><span>Closing</span></span></p><p>Would only open the page when an alert fires.<span class="who"><i class="pc rory">Rory</i><span class="">· Need</span><span>Closing</span></span></p></div><span class="na" style="--k:2" aria-hidden="true"></span><div class="ni"><strong>Doers act on now; overseers report on over time</strong><span>Persona split · 3 nuggets</span></div><span class="na" style="--k:3" aria-hidden="true"></span><div class="nc"><strong>A workspace for doers, a dashboard for overseers</strong><span>Scores, owners, leavers and an exportable log.</span></div><div class="nq"><p>“If it says three things use Okta and there are five, I’m done with it.”<span class="who"><i class="pc rory">Rory</i><span class="p">! Trust</span><span>Impact</span></span></p><p>Trusts the HR system, not Okta, for employment status.<span class="who"><i class="pc maite">Maite</i><span class="p">! Trust</span><span>Dana’s record</span></span></p></div><span class="na" style="--k:4" aria-hidden="true"></span><div class="ni"><strong>Trust depends on knowing how fresh, and whose, the data is</strong><span>Both personas · 2 nuggets</span></div><span class="na" style="--k:5" aria-hidden="true"></span><div class="nc"><strong>“Index last updated” on the dependency list</strong><span>A source of truth per field stays Phase 2.</span></div><div class="nq"><p>Read the “Unconfirmed” chip as “this value is wrong”.<span class="who"><i class="pc maite">Maite</i><span class="p">! Confusion</span><span>Dana’s record</span></span></p><p>Didn’t know what “Gated” meant.<span class="who"><i class="pc maite">Maite</i><span class="p">! Confusion</span><span>Impact</span></span></p></div><span class="na" style="--k:6" aria-hidden="true"></span><div class="ni"><strong>Labels must say what is known, not imply more</strong><span>Asset manager · 2 nuggets</span></div><span class="na" style="--k:7" aria-hidden="true"></span><div class="nc"><strong>“Source failing” and “Waiting for fresh data”</strong><span>Words about the source, not the value.</span></div><div class="nq"><p>Tried to click “Sources with issues”. Nothing happened.<span class="who"><i class="pc rory">Rory</i><span class="">· Need</span><span>Overview</span></span></p><p>“I’d want it to alert when it’s been waiting more than a day.”<span class="who"><i class="pc rory">Rory</i><span class="">· Need</span><span>Freshness gate</span></span></p></div><span class="na" style="--k:8" aria-hidden="true"></span><div class="ni"><strong>Every number should lead somewhere, and every wait needs a limit</strong><span>Systems admin · 2 nuggets</span></div><span class="na" style="--k:9" aria-hidden="true"></span><div class="nc"><strong>Clickable overview cards, and a 24-hour gate alert</strong><span>Counts open what they count.</span></div>
         </div>
         <p class="method">Method: these nuggets come from simulated walkthroughs with two personas built from real job descriptions. They are hypotheses, not findings — the plan was to re-run the same synthesis on the customer calls.</p>
+      </section>
+
+      <section id="dh-report" class="cs-sec" data-switcher>
+        <p class="eyebrow mono">For overseers</p>
+        <h2>A health report for the people who answer for the data.</h2>
+        <p>Research split the audience in two: doers act on what’s failing now, overseers report on reliability over time. So alongside the workspace I designed a health report — how reliable the asset data has been over the last 30 days, what is still open, and who owns it — for reporting and audit.</p>
+        <figure class="sheet">
+          <div class="shot" style="aspect-ratio:2000/1250" data-zoom><img src="img/dh-hr-page.jpg" alt="The Health report page in the prototype: a measure selector set to Completeness, 99% up 1 point on last month, and a weekly bar chart of records checked." width="2000" height="1389" loading="lazy" decoding="async"></div>
+          <figcaption class="titleblock"><span>Fig. I</span><span class="tb-title">Health report — the overseer’s view<span class="zoom-hint"> · hover to magnify</span></span><span>Real screens</span></figcaption>
+        </figure>
+
+        <h3 class="mono hr-h">Four measures, one chart</h3>
+        <p>One headline per measure, with the change on last month and the records behind it — and every failing number names its cause.</p>
+        <div class="seg" role="tablist" aria-label="Health measure">
+          <span class="seg-ind" aria-hidden="true"></span>
+          <button type="button" role="tab" id="tab-dh-m-c" aria-controls="view-dh-m-c" aria-selected="true" data-role="dh-m-c">Completeness · 99%</button><button type="button" role="tab" id="tab-dh-m-f" aria-controls="view-dh-m-f" aria-selected="false" tabindex="-1" data-role="dh-m-f">Freshness · 84%</button><button type="button" role="tab" id="tab-dh-m-r" aria-controls="view-dh-m-r" aria-selected="false" tabindex="-1" data-role="dh-m-r">Source reliability · 94%</button><button type="button" role="tab" id="tab-dh-m-w" aria-controls="view-dh-m-w" aria-selected="false" tabindex="-1" data-role="dh-m-w">Workflow runs · 97%</button>
+        </div>
+        <figure class="sheet">
+          <div class="shot views" style="aspect-ratio:1800/600;background:#fff" data-zoom><div class="view on" id="view-dh-m-c" role="tabpanel" aria-labelledby="tab-dh-m-c"><img src="img/dh-hr-completeness.png" alt="Completeness: 99%, up 1 point on last month. Records checked by week, complete versus missing a required field." width="1800" height="600" loading="lazy" decoding="async"></div><div class="view" id="view-dh-m-f" role="tabpanel" aria-labelledby="tab-dh-m-f"><img src="img/dh-hr-freshness.png" alt="Freshness: 84%, down 15 points. Managed records by week, on a working source versus behind a failing one." width="1800" height="600" loading="lazy" decoding="async"></div><div class="view" id="view-dh-m-r" role="tabpanel" aria-labelledby="tab-dh-m-r"><img src="img/dh-hr-reliability.png" alt="Source reliability: 94%, down 4 points. Scheduled source runs by week." width="1800" height="600" loading="lazy" decoding="async"></div><div class="view" id="view-dh-m-w" role="tabpanel" aria-labelledby="tab-dh-m-w"><img src="img/dh-hr-runs.png" alt="Workflow runs: 97%, down 2 points. Lifecycle workflow runs by week." width="1800" height="600" loading="lazy" decoding="async"></div></div>
+          <figcaption class="titleblock"><span>Fig. J</span><span class="tb-title">Completeness, freshness, source reliability and workflow runs<span class="zoom-hint"> · hover to magnify</span></span><span>Real screens</span></figcaption>
+        </figure>
+        <div class="notes"><div class="note" data-note="dh-m-c"><ul class="ticks dots"><li>5,564 of 5,610 records have every field their lifecycle state requires.</li><li>Measured by Oomnitza’s 6 default checks; the one failing is named: serial number missing on 46 deployed assets.</li></ul></div><div class="note" data-note="dh-m-f" hidden><ul class="ticks dots"><li>8,224 of 9,840 managed records come from a source that is completing its runs.</li><li>The drop is attributed, not just reported: behind a failing source are Google Workspace 1,204 and Okta 412.</li></ul></div><div class="note" data-note="dh-m-r" hidden><ul class="ticks dots"><li>113 of 120 scheduled source runs completed in the last 30 days.</li><li>Not completed: Google Workspace 5, Okta 2.</li></ul></div><div class="note" data-note="dh-m-w" hidden><ul class="ticks dots"><li>384 of 396 lifecycle workflow runs completed in the last 30 days.</li><li>It separates waiting from failing: 10 waiting for fresh data from Okta, 2 failed with errors.</li></ul></div></div>
+        <p class="hr-note">Accuracy sits in the same menu but is disabled — “Phase 2, needs a source of truth per field” — so the report never claims more than the platform can evidence.</p>
+
+        <h3 class="mono hr-h">What’s open, and whose it is</h3>
+        <figure class="sheet">
+          <div class="hr-stack">
+            <div class="pane"><img src="img/dh-hr-detect.png" alt="Time to detect and resolve: 6 source failures in the last 90 days, a median of 6 minutes to detect and 31 hours to resolve." width="1800" height="293" loading="lazy" decoding="async"></div>
+            <div class="pane"><img src="img/dh-hr-owners.png" alt="Open items by owner, longest open first: 46 deployed assets missing serial number, 21 days, IT Asset team; Google Workspace directory sync not running, 14 days, no owner; Okta user sync failing, 38 hours, Identity team." width="1800" height="528" loading="lazy" decoding="async"></div>
+          </div>
+          <figcaption class="titleblock"><span>Fig. K</span><span class="tb-title">Time to detect and resolve, and open items by owner</span><span>Real screens</span></figcaption>
+        </figure>
+        <ul class="ticks dots hr-list">
+          <li>A failure counts as detected when Integrations alerted its contacts — so “time to detect” measures the alerting that already ships.</li>
+          <li>Open items are ranked longest-open first, and an item with no owner is shown as exactly that.</li>
+          <li>Assignment comes from Guard, so the same owners see these items in their own queue.</li>
+        </ul>
+
+        <h3 class="mono hr-h">Evidence for audit</h3>
+        <figure class="sheet">
+          <div class="hr-stack">
+            <div class="pane"><img src="img/dh-hr-leavers.png" alt="Leavers affected by stale data: two people whose offboarding waited 38 hours, with access still active, devices still assigned and licence seats still held." width="1800" height="412" loading="lazy" decoding="async"></div>
+            <div class="pane"><img src="img/dh-hr-log.png" alt="Response log: every response recorded in the workspace, who did what and when, how it was verified, with Email me this weekly and Export as audit evidence." width="1800" height="603" loading="lazy" decoding="async"></div>
+          </div>
+          <figcaption class="titleblock"><span>Fig. L</span><span class="tb-title">Leavers affected, and the response log</span><span>Real screens</span></figcaption>
+        </figure>
+        <ul class="ticks dots hr-list">
+          <li>Leavers are shown because a leaver with access is an audit finding: access, devices and licence seats still held, and how long offboarding has waited.</li>
+          <li>The response log records who did what, when and how it was verified — and exports as audit evidence, straight from the asset manager’s “this table is basically my audit evidence”.</li>
+        </ul>
       </section>
 
       <section id="dh-next" class="cs-sec">
