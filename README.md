@@ -18,15 +18,23 @@ Case studies are views inside the one page, reached by hash: `#subscriptions`, `
 
 GA4 is added by `scripts/build.sh`, only to the hosted site (never the Claude artifact).
 Set the measurement ID in `GA_ID` at the top of that script; while it is the
-placeholder `G-XXXXXXXXXX`, no analytics code ships. Consent Mode defaults every
-storage type to denied, so no cookies are set. Each case study is reported as a
-virtual page, `/case-studies/<name>`.
+placeholder `G-XXXXXXXXXX`, no analytics code ships.
+
+- `scripts/analytics-head.html` loads GA4 with Consent Mode: everything is denied
+  until the visitor accepts, and ad features always stay off.
+- `scripts/consent-banner.html` is the banner. Accept and Decline carry equal
+  weight; the choice is kept in `localStorage` for 12 months, and "Cookie
+  settings" in the footer reopens it. Declining after accepting deletes the
+  `_ga` cookies.
+- Each case study is reported as a virtual page, `/case-studies/<name>`.
 
 ## Preview locally
 
 ```bash
-./scripts/build.sh
+GA_ID=G-XXXXXXXXXX ./scripts/build.sh
 python3 -m http.server 4317 --directory _site
 ```
+
+Setting `GA_ID` to the placeholder keeps analytics out of local previews, so test visits never reach Google Analytics.
 
 Then open http://localhost:4317.

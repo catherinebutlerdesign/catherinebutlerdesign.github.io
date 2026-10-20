@@ -1,0 +1,50 @@
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+// Consent Mode v2: nothing is stored until the visitor accepts, and ad features stay off.
+gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+gtag('set', 'ads_data_redaction', true);
+window.cbConsent = (function () {
+  var KEY = 'cb-analytics-consent', YEAR = 365 * 24 * 3600 * 1000;
+  function read() {
+    try {
+      var v = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (v && (v.c === 'granted' || v.c === 'denied') && Date.now() - v.t < YEAR) return v.c;
+    } catch (e) {}
+    return null;
+  }
+  function clearGaCookies() {
+    document.cookie.split(';').forEach(function (c) {
+      var name = c.split('=')[0].trim();
+      if (!/^_ga/.test(name)) return;
+      [location.hostname, '.' + location.hostname, ''].forEach(function (d) {
+        document.cookie = name + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : '');
+      });
+    });
+  }
+  function set(choice) {
+    try { localStorage.setItem(KEY, JSON.stringify({ c: choice, t: Date.now() })); } catch (e) {}
+    gtag('consent', 'update', { analytics_storage: choice });
+    if (choice === 'denied') clearGaCookies();
+  }
+  if (read() === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' });
+  return { read: read, set: set };
+})();
+gtag('js', new Date());
+gtag('config', '__GA_ID__', { send_page_view: false });
+// Case studies are views inside one page, so each is sent as its own virtual path.
+(function () {
+  var sent = false;
+  function view(name, title) {
+    sent = true;
+    var home = !name || name === 'home';
+    gtag('event', 'page_view', {
+      page_location: location.origin + (home ? '/' : '/case-studies/' + name),
+      page_title: home ? 'Home' : (title || name) + ' (case study)'
+    });
+  }
+  document.addEventListener('portfolio:view', function (e) { view(e.detail.name, e.detail.title); });
+  document.addEventListener('DOMContentLoaded', function () { if (!sent) view('home'); });
+})();
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=__GA_ID__"></script>

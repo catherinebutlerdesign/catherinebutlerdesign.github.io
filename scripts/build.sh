@@ -22,37 +22,17 @@ cp -R portfolio/img _site/img
 <meta property="og:type" content="website">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 HEAD
+  ANALYTICS=0
   if [[ "$GA_ID" =~ ^G-[A-Z0-9]+$ && "$GA_ID" != "G-XXXXXXXXXX" ]]; then
-    # Consent Mode with everything denied: no cookies are set and GA4 gets
-    # cookieless pings only. Case studies are views inside one page, so each
-    # is sent as a virtual path such as /case-studies/datahealth.
-    cat <<GA
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){ dataLayer.push(arguments); }
-gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
-gtag('set', 'ads_data_redaction', true);
-gtag('js', new Date());
-gtag('config', '${GA_ID}', { send_page_view: false });
-(function () {
-  var sent = false;
-  function view(name, title) {
-    sent = true;
-    var home = !name || name === 'home';
-    gtag('event', 'page_view', {
-      page_location: location.origin + (home ? '/' : '/case-studies/' + name),
-      page_title: home ? 'Home' : (title || name) + ' (case study)'
-    });
-  }
-  document.addEventListener('portfolio:view', function (e) { view(e.detail.name, e.detail.title); });
-  document.addEventListener('DOMContentLoaded', function () { if (!sent) view('home'); });
-})();
-</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>
-GA
+    ANALYTICS=1
+    # GA4 with Consent Mode: denied until the visitor accepts in the banner.
+    sed "s/__GA_ID__/$GA_ID/g" scripts/analytics-head.html
   fi
   printf '</head>\n<body>\n'
   cat portfolio/index.html
+  if [[ $ANALYTICS == 1 ]]; then
+    cat scripts/consent-banner.html
+  fi
   printf '\n</body>\n</html>\n'
 } > _site/index.html
 touch _site/.nojekyll

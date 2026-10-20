@@ -1,0 +1,56 @@
+<div class="cc" id="cc" role="region" aria-label="Cookie consent" hidden>
+  <p class="cc-t">Cookies</p>
+  <p class="cc-b">I use Google Analytics to see which case studies people read. It only sets cookies if you accept. Decline, and nothing is stored.</p>
+  <div class="cc-a">
+    <button type="button" class="cc-btn" data-choice="granted">Accept</button>
+    <button type="button" class="cc-btn" data-choice="denied">Decline</button>
+  </div>
+  <a class="cc-more" href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses this data ↗</a>
+</div>
+<style>
+.cc{
+  position:fixed; right:16px; bottom:calc(16px + env(safe-area-inset-bottom,0px)); z-index:90;
+  width:min(400px,calc(100vw - 32px)); padding:18px 18px 14px; border-radius:10px;
+  border:1px solid var(--line); background:var(--paper); color:var(--ink);
+  box-shadow:0 24px 50px -24px rgba(6,20,40,.45); animation:ccIn .6s cubic-bezier(.16,.84,.2,1) both;
+}
+.cc-t{margin:0 0 6px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.cc-b{margin:0;font-size:15px;line-height:1.45}
+.cc-a{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.cc-btn{
+  appearance:none; cursor:pointer; padding:11px 14px; border-radius:999px;
+  border:1px solid var(--ink); background:var(--paper); color:var(--ink);
+  font-family:var(--mono); font-size:12px; letter-spacing:.06em; text-transform:uppercase;
+  transition:background .25s,color .25s;
+}
+.cc-btn:hover{background:var(--ink);color:var(--paper)}
+.cc-more{display:inline-block;margin-top:12px;font-size:12.5px;color:var(--ink-2)}
+.cc-link{appearance:none;background:none;border:0;padding:0;cursor:pointer;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit}
+.cc-link:hover{color:var(--ink)}
+@keyframes ccIn{from{transform:translateY(16px)}}
+@media (prefers-reduced-motion: reduce){.cc{animation:none}}
+</style>
+<script>
+(function () {
+  var cc = document.getElementById('cc');
+  if (!cc || !window.cbConsent) return;
+  // Accept and Decline carry the same weight, and either closes the banner.
+  cc.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-choice]');
+    if (!b) return;
+    window.cbConsent.set(b.getAttribute('data-choice'));
+    cc.hidden = true;
+  });
+  if (window.cbConsent.read() === null) cc.hidden = false;
+  // "Cookie settings" in the footer reopens the banner to change the choice.
+  var foot = document.querySelector('.foot');
+  if (foot) {
+    var link = document.createElement('button');
+    link.type = 'button';
+    link.className = 'cc-link';
+    link.textContent = 'Cookie settings';
+    link.addEventListener('click', function () { cc.hidden = false; cc.querySelector('.cc-btn').focus(); });
+    foot.appendChild(link);
+  }
+})();
+</script>
