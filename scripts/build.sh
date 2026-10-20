@@ -6,7 +6,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 # GA4 measurement ID. While it is the placeholder, no analytics code ships.
-GA_ID="${GA_ID:-G-6Y7QW5C0FW}"
+GA_ID="${GA_ID:-G-49P9WHQ265}"
 rm -rf _site && mkdir -p _site
 cp -R portfolio/img _site/img
 {
