@@ -865,13 +865,13 @@ section[id]{scroll-margin-top:72px}
 .cl-base img{width:100%;height:auto}
 .cl-rec{right:4%;bottom:7%;width:52%;aspect-ratio:896/405;--d:14px}
 .cl-rec img{width:223.21%;height:auto;margin-left:-114.06%;margin-top:-38.5%}
-.cl-risk{left:2.5%;top:46%;width:54%;aspect-ratio:750/128;--d:20px;border-radius:6px}
-.cl-risk img{width:266.67%;height:auto;margin-left:-45.33%;margin-top:-57.07%}
+.cl-risk{left:2.5%;top:38%;width:54%;aspect-ratio:730/126;--d:20px;border-radius:6px}
+.cl-risk img{width:273.97%;height:auto;margin-left:-46.58%;margin-top:-33.97%}
 .cl-cut{
-  position:absolute; left:17.58%; top:30.27%; width:62.24%; height:7.74%; border:1.5px dashed var(--signal); border-radius:4px;
+  position:absolute; left:17.54%; top:20.27%; width:62.32%; height:7.88%; border:1.5px dashed var(--signal); border-radius:4px;
   transform:translate(calc(var(--px,0) * 6px + var(--hx,0px)),calc(var(--py,0) * 6px + var(--hy,0px))); transition:transform .8s var(--ease);
 }
-.cl-lead{position:absolute;left:20%;top:38%;height:8%;border-left:1.5px dashed var(--signal)}
+.cl-lead{position:absolute;left:20%;top:28.15%;height:9.85%;border-left:1.5px dashed var(--signal)}
 .case:hover .cl-base,.case:hover .cl-cut{--hx:-6px;--hy:-6px}
 .case:hover .cl-rec{--hx:9px;--hy:9px}
 .case:hover .cl-risk{--hx:-5px;--hy:5px;--hs:1.035}
@@ -1287,14 +1287,14 @@ section[id]{scroll-margin-top:72px}
         <div class="case-foot"><span class="read mono">Read the case study <span class="arr" aria-hidden="true">→</span></span></div>
       </div>
       <figure class="sheet">
-        <div class="stack collage" role="img" aria-label="Data Health prototype screens: the overview with its risk banner pulled out and magnified, and Dana Whitfield's record showing unconfirmed fields.">
+        <div class="stack collage" role="img" aria-label="Data Health prototype screens: the workspace with its risk banner pulled out and magnified, and Dana Whitfield's record showing unconfirmed fields.">
           <div class="cl cl-base"><img src="img/dh-overview.png" alt="" width="2000" height="1375" loading="lazy" decoding="async"></div>
           <span class="cl-cut" aria-hidden="true"></span>
           <span class="cl-lead" aria-hidden="true"></span>
           <div class="cl cl-rec"><img src="img/dh-record.jpg" alt="" width="2000" height="1250" loading="lazy" decoding="async"></div>
           <div class="cl cl-risk"><img src="img/dh-overview.png" alt="" width="2000" height="1375" loading="lazy" decoding="async"></div>
         </div>
-        <figcaption class="titleblock"><span>Fig. 04</span><span class="tb-title">Overview, risk banner and field status</span><span>Real screens</span></figcaption>
+        <figcaption class="titleblock"><span>Fig. 04</span><span class="tb-title">Workspace, risk banner and field status</span><span>Real screens</span></figcaption>
       </figure>
     </article>
 
@@ -1741,8 +1741,8 @@ section[id]{scroll-margin-top:72px}
 
   <div class="wrap">
     <figure class="sheet tilt-fig" style="margin:0">
-      <div class="tilt-stage"><div class="tilt"><img src="img/dh-overview.png" alt="Data Health overview in the prototype: four headline cards, a red banner warning that 3 automated processes will act on unconfirmed data in 5h 40m, and a table of signals." width="2000" height="1375" decoding="async"></div></div>
-      <figcaption class="titleblock"><span>Fig. A</span><span class="tb-title">Data Health overview — interactive prototype</span><span>Real screens</span></figcaption>
+      <div class="tilt-stage"><div class="tilt"><img src="img/dh-overview.png" alt="The Data Health workspace in the prototype: a red banner warning that new-hire equipment assignment runs on stale Okta data in 2h 15m, four headline cards, and signals ranked by risk to automations." width="2000" height="1375" decoding="async"></div></div>
+      <figcaption class="titleblock"><span>Fig. A</span><span class="tb-title">Data Health workspace — interactive prototype</span><span>Real screens</span></figcaption>
     </figure>
   </div>
 
@@ -1857,19 +1857,19 @@ section[id]{scroll-margin-top:72px}
         <p>I built the first screens with a Claude skill grounded in Oomnitza’s design system — real components, exact tokens and page patterns (the <a class="tlink" href="#designsystem">design system case study <span class="arr" aria-hidden="true">→</span></a> covers how). Each proposed step maps to a place in the product.</p>
         <div class="seg" role="tablist" aria-label="Prototype screen">
           <span class="seg-ind" aria-hidden="true"></span>
-          <button type="button" role="tab" id="tab-dh-ov" aria-controls="view-dh-ov" aria-selected="true" data-role="dh-ov">Overview</button>
+          <button type="button" role="tab" id="tab-dh-ov" aria-controls="view-dh-ov" aria-selected="true" data-role="dh-ov">Workspace</button>
           <button type="button" role="tab" id="tab-dh-im" aria-controls="view-dh-im" aria-selected="false" tabindex="-1" data-role="dh-im">Impact</button>
         </div>
         <figure class="sheet">
           <div class="shot crop-16x9 views" data-zoom>
-            <div class="view on" id="view-dh-ov" role="tabpanel" aria-labelledby="tab-dh-ov"><img src="img/dh-overview.png" alt="Overview: dependent actions at risk, sources with issues, records not synced, quality checks, a risk banner and the signals table." width="2000" height="1375" loading="lazy" decoding="async"><span class="hl" style="--k:0;left:16.5%;top:19.56%;width:19.8%;height:16%"><span class="lbl ">Consequence first: the smallest number leads</span></span><span class="hl" style="--k:1;left:16.56%;top:37.44%;width:81.9%;height:12.44%"><span class="lbl ">What’s about to happen, not what broke</span></span><span class="hl" style="--k:2;left:88%;top:59.1%;width:10.4%;height:27.56%"><span class="lbl end">Risk as time, or as uncertainty</span></span></div>
-            <div class="view" id="view-dh-im" role="tabpanel" aria-labelledby="tab-dh-im"><img src="img/dh-impact.png" alt="Okta — User sync impact tab: 412 records not re-synced, 3 automated processes, 5h 40m window, dependent processes and affected records." width="2000" height="1375" loading="lazy" decoding="async"><span class="hl" style="--k:0;left:18%;top:25.33%;width:16.25%;height:3.11%"><span class="lbl ">Evidence · Impact · Verification</span></span><span class="hl" style="--k:1;left:88.3%;top:13.06%;width:10.1%;height:3.22%"><span class="lbl end">Choose a response</span></span><span class="hl" style="--k:2;left:71.35%;top:32%;width:25.6%;height:9.89%"><span class="lbl end">The window before the next run</span></span><span class="hl" style="--k:3;left:19.06%;top:52.89%;width:76.9%;height:6.67%"><span class="lbl ">Stalled at step 4 of 6, waiting on unconfirmed data</span></span></div>
+            <div class="view on" id="view-dh-ov" role="tabpanel" aria-labelledby="tab-dh-ov"><img src="img/dh-overview.png" alt="Workspace: a red banner warning that new-hire equipment assignment runs on stale Okta data in 2h 15m, four headline cards and a table of signals ranked by risk to automations." width="2000" height="1375" loading="lazy" decoding="async"><span class="hl" style="--k:0;left:16.5%;top:21.33%;width:82.0%;height:12.67%"><span class="lbl end">What’s about to happen, not what broke</span></span><span class="hl" style="--k:1;left:16.44%;top:35.67%;width:19.88%;height:16.22%"><span class="lbl below">Consequence first: the smallest number leads</span></span><span class="hl" style="--k:2;left:86.88%;top:59.89%;width:11.56%;height:24.11%"><span class="lbl end">Risk as time, or as uncertainty</span></span></div>
+            <div class="view" id="view-dh-im" role="tabpanel" aria-labelledby="tab-dh-im"><img src="img/dh-impact.png" alt="Okta — User sync impact tab: 412 records, 3 automations, a 5h 40m window, and each automation that uses Okta’s fields with what will happen to it." width="2000" height="1375" loading="lazy" decoding="async"><span class="hl" style="--k:0;left:16.5%;top:23.78%;width:16.75%;height:3.33%"><span class="lbl ">Evidence · Impact · Verification</span></span><span class="hl" style="--k:1;left:87.81%;top:12.89%;width:10.69%;height:3.56%"><span class="lbl end">Choose a response</span></span><span class="hl" style="--k:2;left:71.81%;top:29.78%;width:26.69%;height:10.0%"><span class="lbl end">The window before the next run</span></span><span class="hl" style="--k:3;left:17.56%;top:52.78%;width:79.88%;height:6.78%"><span class="lbl ">Runs on stale data: no freshness gate</span></span></div>
           </div>
           <figcaption class="titleblock"><span>Fig. E</span><span class="tb-title">Data Health prototype<span class="zoom-hint"> · hover to magnify</span></span><span>Real screens</span></figcaption>
         </figure>
         <div class="notes">
-          <div class="note" data-note="dh-ov"><ul class="ticks dots"><li>The smallest number leads: 3 dependent actions at risk, with the time left before Okta next runs.</li><li>The headline banner says what is about to happen to the business, not that a connector failed.</li><li>Risk is shown as time where a deadline is known, and as uncertainty where it isn’t.</li></ul></div>
-          <div class="note" data-note="dh-im" hidden><ul class="ticks dots"><li>Evidence, Impact and Verification follow the proposed steps in order.</li><li>Offboarding is stalled at step 4 of 6, waiting on employment status that hasn’t been confirmed for 38 hours.</li><li>Confidence reflects how recently the source wrote to the record — not whether the value is correct.</li></ul></div>
+          <div class="note" data-note="dh-ov"><ul class="ticks dots"><li>The headline is what is about to happen to the business — “New-hire equipment assignment runs on stale Okta data in 2h 15m” — not that a connector failed.</li><li>The smallest number leads: 3 automations using stale data, and when the next one runs.</li><li>Risk to automations is shown as time where a deadline is known, and as “Unknown” where it isn’t.</li></ul></div>
+          <div class="note" data-note="dh-im" hidden><ul class="ticks dots"><li>Evidence, Impact and Verification follow the proposed steps in order.</li><li>Each automation says what will happen to it: one runs on stale data in 2h 15m, offboarding waits behind its freshness gate, and a licence rule that can’t take a gate means leavers keep their seats.</li><li>The dependency list says when its index was last updated, and “recency” means when Okta last completed a run — not whether a value is correct.</li></ul></div>
         </div>
         <p style="margin-top:22px"><a class="btn" href="https://catherinebutlerdesign.github.io/datahealth/" target="_blank" rel="noopener">Try the live prototype <span class="arr" aria-hidden="true">↗</span></a></p>
       </section>
