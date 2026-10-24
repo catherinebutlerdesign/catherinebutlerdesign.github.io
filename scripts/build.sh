@@ -17,7 +17,7 @@ cp -R portfolio/img _site/img
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Catherine Butler, Senior Product Designer based in Dublin. Complex B2B SaaS, made clear: case studies in subscription self-service, data trust, AI-assisted design systems and SquadCurve.">
-<meta property="og:title" content="Catherine Butler — Senior Product Designer">
+<meta property="og:title" content="Catherine Butler, Senior Product Designer">
 <meta property="og:description" content="Complex systems, made clear. Case studies in B2B SaaS, design systems and AI-assisted prototyping.">
 <meta property="og:type" content="website">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
