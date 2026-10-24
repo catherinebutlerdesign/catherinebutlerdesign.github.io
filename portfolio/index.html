@@ -476,6 +476,24 @@ section[id]{scroll-margin-top:72px}
 .anat li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;padding:14px 16px 14px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.45}
 .anat b{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--signal);color:#1A1206;font-family:var(--mono);font-size:11px;font-weight:500}
 
+/* iPhone screens */
+.phones{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2.2vw,28px);padding:clamp(20px,3vw,40px) clamp(16px,3vw,40px) clamp(18px,2.6vw,32px);background:var(--plate)}
+.pf{display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0}
+.pf-dev{width:100%;max-width:250px;padding:2.8%;border-radius:16%/7.4%;background:#05080F;box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 26px 48px -26px rgba(6,20,40,.6)}
+.pf-dev img{display:block;width:100%;height:auto;aspect-ratio:639/1390;border-radius:13.4%/6.2%}
+.pf-cap{margin:0;text-align:center;color:var(--ink-2)}
+.pf-cap b{display:block;margin-bottom:2px;color:var(--ink);font-family:var(--display);font-size:15px;letter-spacing:0;text-transform:none;font-variation-settings:"wdth" 100,"wght" 500}
+@media (max-width:760px){.phones{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* desktop → iPhone mapping */
+.map{margin:22px 0 0;border-top:1px solid var(--ink)}
+.map>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:6px clamp(16px,3vw,32px);padding:14px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.45}
+.map>div.hdr{padding-block:10px}
+.map>div.hdr dd{color:var(--ink-2)}
+.map dt{color:var(--ink-2)}
+.map dd{margin:0}
+@media (max-width:560px){.map>div{grid-template-columns:1fr}.map>div.hdr{display:none}}
+
 .scen{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .scen li{padding:18px;border:1px solid var(--line);border-radius:4px;background:var(--plate);font-size:16px;line-height:1.35;min-height:120px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
 .scen li .mono{color:var(--ink-2);font-size:11px}
@@ -1381,11 +1399,12 @@ section[id]{scroll-margin-top:72px}
     <p class="cs-lede">Designing one subscription experience for customers, vendors and internal teams, without creating ownership or agreement conflicts.</p>
     <dl class="cs-facts">
       <div><dt>Role</dt><dd>Senior Product Designer</dd></div>
-      <div><dt>Scope</dt><dd>Subscription discovery, purchase and ongoing management</dd></div>
+      <div><dt>Scope</dt><dd>Subscription discovery, purchase and ongoing management, on desktop and iPhone</dd></div>
       <div><dt>Team</dt><dd>Product, engineering, data and business-domain experts</dd></div>
       <div><dt>Users</dt><dd>Enterprise customers, software vendors, internal operations</dd></div>
       <div><dt>Status</dt><dd>Shipped</dd></div>
       <div><dt>Demo</dt><dd><a class="tlink" href="https://www.youtube.com/watch?v=OMo_f2ycVF8" target="_blank" rel="noopener">Watch on YouTube <span class="arr" aria-hidden="true">↗</span></a></dd></div>
+      <div><dt>Prototypes</dt><dd><a class="tlink" href="https://catherinebutlerdesign.github.io/subscriptions-prototype/subscriptions-prototype.html" target="_blank" rel="noopener">Desktop <span class="arr" aria-hidden="true">↗</span></a> <a class="tlink" href="https://catherinebutlerdesign.github.io/subscriptions-prototype/subscriptions-mobile.html" target="_blank" rel="noopener">iPhone <span class="arr" aria-hidden="true">↗</span></a></dd></div>
     </dl>
   </header>
 
@@ -1410,6 +1429,7 @@ section[id]{scroll-margin-top:72px}
       <a href="#cs-views" data-scroll>Three views</a>
       <a href="#cs-status" data-scroll>Status</a>
       <a href="#cs-pages" data-scroll>Object pages</a>
+      <a href="#cs-mobile" data-scroll>iPhone</a>
       <a href="#cs-iteration" data-scroll>Iteration</a>
       <a href="#cs-impact" data-scroll>Impact</a>
       <a href="#cs-adoption" data-scroll>Adoption</a>
@@ -1439,6 +1459,7 @@ section[id]{scroll-margin-top:72px}
               <li>Worked with subject-matter experts on subscription lifecycles and agreement constraints.</li>
               <li>Defined scenarios for customers, vendors and internal operations teams.</li>
               <li>Designed the purchase, subscription-list and subscription-management experiences.</li>
+              <li>Designed the iPhone version of subscription management on Apple’s iOS 27 Liquid Glass components.</li>
               <li>Created reusable patterns aligned with the marketplace design system.</li>
               <li>Partnered with developers on usability and technical feasibility.</li>
             </ul>
@@ -1611,6 +1632,32 @@ section[id]{scroll-margin-top:72px}
         </ol>
       </section>
 
+      <section id="cs-mobile" class="cs-sec">
+        <p class="eyebrow mono">iPhone · iOS 27</p>
+        <h2>The same model, redesigned for iPhone.</h2>
+        <p>I also designed the mobile version of subscription management, built on Apple’s iOS 27 Liquid Glass components. The ownership model didn’t change: each role still sees its own prices and only the actions it’s allowed to take.</p>
+        <p>What changed is the shape of the object page. Desktop tabs, wizards and action menus became patterns iPhone users already know, so the subscription feels native rather than squeezed.</p>
+        <figure class="sheet">
+          <div class="phones" role="img" aria-label="Four iPhone screens. The client’s subscription list, with subscriptions that need attention grouped first. Then the same Creative Cloud subscription as the client sees it (sell price 105.00 GBP a month), as the vendor sees it (purchase price 100.00 GBP a month) and as operations sees it (sell price, purchase price and a 5% average yield).">
+            <div class="pf"><div class="pf-dev"><img src="img/ios-list.jpg" alt="" width="639" height="1390" loading="lazy" decoding="async"></div><p class="pf-cap mono"><b>Subscription list</b>Client</p></div>
+            <div class="pf"><div class="pf-dev"><img src="img/ios-client.jpg" alt="" width="639" height="1390" loading="lazy" decoding="async"></div><p class="pf-cap mono"><b>Sell price</b>Client</p></div>
+            <div class="pf"><div class="pf-dev"><img src="img/ios-vendor.jpg" alt="" width="639" height="1390" loading="lazy" decoding="async"></div><p class="pf-cap mono"><b>Purchase price</b>Vendor</p></div>
+            <div class="pf"><div class="pf-dev"><img src="img/ios-ops.jpg" alt="" width="639" height="1390" loading="lazy" decoding="async"></div><p class="pf-cap mono"><b>Both, plus yield</b>Operations</p></div>
+          </div>
+          <figcaption class="titleblock"><span>Fig. F</span><span class="tb-title">Subscriptions for iPhone: the list, then one subscription three ways</span><span>Prototype</span></figcaption>
+        </figure>
+        <dl class="map">
+          <div class="hdr mono" aria-hidden="true"><dt>On desktop</dt><dd>On iPhone</dd></div>
+          <div><dt>Tabs on the object page</dt><dd>Rows that open each section, grouped under More</dd></div>
+          <div><dt>Primary action, Edit</dt><dd>Edit in the Liquid Glass toolbar, in the same place on every subscription</dd></div>
+          <div><dt>Secondary actions</dt><dd>The ••• menu, with Terminate last and in red</dd></div>
+          <div><dt>Four-step change wizard</dt><dd>One sheet: adjust quantities, review the cost, place the order</dd></div>
+          <div><dt>Status column</dt><dd>Status labels, with anything that needs attention grouped first</dd></div>
+          <div><dt>Price columns per role</dt><dd>Summary tiles showing the price that role owns</dd></div>
+        </dl>
+        <p style="margin-top:24px"><a class="tlink" href="https://catherinebutlerdesign.github.io/subscriptions-prototype/subscriptions-mobile.html" target="_blank" rel="noopener">Try the iPhone prototype <span class="arr" aria-hidden="true">↗</span></a></p>
+      </section>
+
       <section id="cs-iteration" class="cs-sec">
         <p class="eyebrow mono">Working iteratively</p>
         <h2>Concrete scenarios kept every review honest.</h2>
@@ -1678,7 +1725,7 @@ section[id]{scroll-margin-top:72px}
             </details>
             <p class="ga-src">Source: Google Analytics 4, Marketplace Platform production property, Pages and screens report, last 28 days (16 Sep – 13 Oct 2026). Raw traffic counts left out.</p>
           </div>
-          <figcaption class="titleblock"><span>Fig. F</span><span class="tb-title">Where people spend their time: GA4, Marketplace production</span><span>28 days</span></figcaption>
+          <figcaption class="titleblock"><span>Fig. G</span><span class="tb-title">Where people spend their time: GA4, Marketplace production</span><span>28 days</span></figcaption>
         </figure>
       </section>
 
