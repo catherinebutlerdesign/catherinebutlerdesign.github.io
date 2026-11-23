@@ -1776,10 +1776,10 @@ section[id]{scroll-margin-top:72px}
     <svg class="brand brand-oo lg" viewBox="0 0 3763.2 692.2" role="img" aria-label="Oomnitza"><use href="#logo-oomnitza"/></svg>
     <p class="cs-meta mono"><span>Case study</span><span>2026</span></p>
     <h1 class="cs-title"><span class="ln">Data Health: knowing which</span> <span class="ln">data you can trust</span></h1>
-    <p class="cs-lede">When an integration quietly stops syncing, IT admins find out from a ticket, after automation has already acted on stale data. I designed a consequence layer that shows what a failure is about to cost, and lets admins act before it does.</p>
+    <p class="cs-lede">When an integration quietly stops syncing, IT admins find out from a ticket, after automation has already acted on stale data. I designed a consequence layer that shows what a failure is about to cost, and lets admins act before it does. The work then widened across the chain it sits on: how a system gets connected in the first place, and how what it discovers becomes inventory.</p>
     <dl class="cs-facts">
       <div><dt>Role</dt><dd>Senior Product Designer</dd></div>
-      <div><dt>My contribution</dt><dd>Research synthesis, product framing, MVP prioritisation, journeys and flows, interactive prototyping</dd></div>
+      <div><dt>My contribution</dt><dd>Research synthesis, product framing, MVP prioritisation, journeys and flows, integration setup, software discovery triage, interactive prototyping</dd></div>
       <div><dt>Team</dt><dd>Product, Customer Success, internal IT, engineering and domain experts</dd></div>
       <div><dt>Stage</dt><dd>MVP prototype, validated with customers through CSMs</dd></div>
       <div><dt>Prototype</dt><dd><a class="tlink" href="https://catherinebutlerdesign.github.io/datahealth/" target="_blank" rel="noopener">Try it live <span class="arr" aria-hidden="true">↗</span></a></dd></div>
@@ -1804,6 +1804,8 @@ section[id]{scroll-margin-top:72px}
       <a href="#dh-feasible" data-scroll>Feasibility</a>
       <a href="#dh-research" data-scroll>Research</a>
       <a href="#dh-report" data-scroll>Health report</a>
+      <a href="#dh-connect" data-scroll>Connecting</a>
+      <a href="#dh-discovery" data-scroll>Discovery</a>
       <a href="#dh-next" data-scroll>Next</a>
     </nav>
 
@@ -1821,6 +1823,8 @@ section[id]{scroll-margin-top:72px}
               <li>Moved discovery from stage 04 (someone complains) to stage 01 (the sync fails).</li>
               <li>Checked all 20 prototype claims against the platform before customers saw it.</li>
               <li>Built an interactive MVP with Claude and Oomnitza’s design system.</li>
+              <li>Extended it to the chain either side: connecting a system, and triaging what it discovers.</li>
+              <li>Named what will depend on an integration before launch, not after it fails.</li>
             </ul>
           </div>
           <div>
@@ -2006,6 +2010,83 @@ section[id]{scroll-margin-top:72px}
           <li>Leavers are shown because a leaver with access is an audit finding: access, devices and licence seats still held, and how long offboarding has waited.</li>
           <li>The response log records who did what, when and how it was verified, and exports as audit evidence, straight from the asset manager’s “this table is basically my audit evidence”.</li>
         </ul>
+      </section>
+
+      <section id="dh-connect" class="cs-sec" data-switcher>
+        <p class="eyebrow mono">Where the work widened</p>
+        <h2>Every dependency starts with a field mapping.</h2>
+        <p>Everything above is one integration failing. The same question runs backwards through the platform: an automation only breaks because something mapped a field to it, and nobody said so at the time. So I designed the step before the failure, where a system gets connected.</p>
+        <p>Mapping is what creates the dependency. An automation reads an Oomnitza field, so it depends on whichever integration fills that field. Today you learn that when the integration stops. Here the flow says it before launch, while adding a freshness gate is still cheap.</p>
+        <figure class="sheet">
+          <div class="shot" style="aspect-ratio:2000/1975" data-zoom><img src="img/dh-connectors.png" alt="The connectors catalogue in the prototype: a three-column grid of cards, each with the vendor mark, a status pill, what the connector reads, and its type, last run, records and what it discovered." width="2000" height="1975" loading="lazy" decoding="async"></div>
+          <figcaption class="titleblock"><span>Fig. M</span><span class="tb-title">The catalogue: what tells Oomnitza about your software<span class="zoom-hint"> · hover to magnify</span></span><span>Real screens</span></figcaption>
+        </figure>
+        <p>Connectors are split by what they answer, not by vendor. SaaS discovery and the licence consoles sit under Software; the people and device syncs sit under Configuration. That split is Oomnitza’s own: it ships a separate integration for Okta users and for Okta SaaS management, so the same vendor appears in both areas as two integrations rather than one straddling the line.</p>
+
+        <h3 class="mono hr-h">Seven steps, in a modal over the catalogue</h3>
+        <p>Adding an integration is a detour, not a destination: it starts from the catalogue and ends back on it, so leaving half-done is a close rather than a navigation. Three of the steps came out of a pass over how Estuary, ClickUp, Fivetran and Airbyte handle the same job.</p>
+        <div class="seg" role="tablist" aria-label="Integration step">
+          <span class="seg-ind" aria-hidden="true"></span>
+          <button type="button" role="tab" id="tab-dh-f1" aria-controls="view-dh-f1" aria-selected="true" data-role="dh-f1">Choose a system</button>
+          <button type="button" role="tab" id="tab-dh-f2" aria-controls="view-dh-f2" aria-selected="false" tabindex="-1" data-role="dh-f2">Map fields</button>
+          <button type="button" role="tab" id="tab-dh-f3" aria-controls="view-dh-f3" aria-selected="false" tabindex="-1" data-role="dh-f3">Review and launch</button>
+        </div>
+        <figure class="sheet">
+          <div class="shot views" style="aspect-ratio:2000/1375" data-zoom>
+            <div class="view on" id="view-dh-f1" role="tabpanel" aria-labelledby="tab-dh-f1"><img src="img/dh-flow-choose.png" alt="Step 1 of 7, Choose a system: a modal over the catalogue with the seven steps down the left, and vendor cards that each say what the connector writes, how often, who maintains it and how many automations already read those fields." width="2000" height="1375" loading="lazy" decoding="async"></div>
+            <div class="view" id="view-dh-f2" role="tabpanel" aria-labelledby="tab-dh-f2"><img src="img/dh-flow-map.png" alt="Step 3 of 7, Map fields: each vendor attribute against the Oomnitza field it writes and the object it belongs to, with email marked required and country left unmapped." width="2000" height="1375" loading="lazy" decoding="async"></div>
+            <div class="view" id="view-dh-f3" role="tabpanel" aria-labelledby="tab-dh-f3"><img src="img/dh-flow-review.png" alt="Step 7 of 7, Review and launch: a summary table, then What will depend on this, naming offboarding as having a freshness gate and a SAM licence rule as unable to take one." width="2000" height="1375" loading="lazy" decoding="async"></div>
+          </div>
+          <figcaption class="titleblock"><span>Fig. N</span><span class="tb-title">Connecting a system, three of seven steps<span class="zoom-hint"> · hover to magnify</span></span><span>Real screens</span></figcaption>
+        </figure>
+        <div class="notes">
+          <div class="note" data-note="dh-f1"><ul class="ticks dots"><li>The catalogue card says what a connector writes, how often, who maintains it, and how many automations already read those fields, so the cost of adding it is legible before you add it.</li><li>The modal keeps the catalogue behind it. Cancelling at step 4 puts you back where you started, with a draft.</li></ul></div>
+          <div class="note" data-note="dh-f2" hidden><ul class="ticks dots"><li>Every row names the Oomnitza field and the object it writes to, because that is the thing an automation will later read.</li><li>An unmapped attribute is allowed, and the step says what that means rather than blocking: it is simply not imported.</li><li>Username is required and the integration stays in Draft until it is mapped, which follows Oomnitza’s own setup.</li></ul></div>
+          <div class="note" data-note="dh-f3" hidden><ul class="ticks dots"><li>Before launch, the step names each automation that will depend on this integration, and whether it can wait for it.</li><li>Offboarding has a freshness gate, so it waits. A SAM licence rule cannot take one, so it runs whether or not the integration completed.</li><li>This is the same dependency the workspace shows after a failure. Showing it here is the cheaper half of the same idea.</li></ul></div>
+        </div>
+      </section>
+
+      <section id="dh-discovery" class="cs-sec" data-switcher>
+        <p class="eyebrow mono">Software discovery</p>
+        <h2>Nothing is an application until somebody says so.</h2>
+        <p>Once those connectors run, SaaS discovery returns everything people sign into: products, the publishers behind them, raw domains, one-off internal tools. None of it is categorised, and in a real tenant there are hundreds of rows. A discovery log is a holding area, not an inventory.</p>
+        <p>The decision is one way. A wrong match is harder to undo than an unmatched row, so the design never guesses on the reader’s behalf: Oomnitza proposes, a person decides, and the dialog says plainly that the entry cannot be anything else afterwards.</p>
+        <figure class="sheet">
+          <div class="shot" style="aspect-ratio:2000/1375" data-zoom><img src="img/dh-discovery.png" alt="Discovery logs: a table of discovered entries with what found each one, when it was first seen and how many users it has, and a Log actions menu open on the Atlassian row offering Match as publisher, Match as application and Ignore." width="2000" height="1375" loading="lazy" decoding="async"></div>
+          <figcaption class="titleblock"><span>Fig. O</span><span class="tb-title">Every entry is new until it is matched or excluded<span class="zoom-hint"> · hover to magnify</span></span><span>Real screens</span></figcaption>
+        </figure>
+        <ul class="ticks dots hr-list">
+          <li>Rows carry no suggested category. Oomnitza classifies what a rule can decide and leaves the rest alone, so a row says what was found and who found it, never what it probably is.</li>
+          <li>All three actions live behind one Log actions menu, which is where the product already puts them.</li>
+          <li>Ignoring is a decision too, so it has its own tab and counts as categorised.</li>
+        </ul>
+
+        <h3 class="mono hr-h">Search what exists, or add what doesn’t</h3>
+        <p>Those are the only two outcomes, so they are the only two tabs. Search leads, because an inventory with two spellings of Atlassian in it is the problem this step exists to prevent.</p>
+        <div class="seg" role="tablist" aria-label="How to resolve an entry">
+          <span class="seg-ind" aria-hidden="true"></span>
+          <button type="button" role="tab" id="tab-dh-m1" aria-controls="view-dh-m1" aria-selected="true" data-role="dh-m1">Search</button>
+          <button type="button" role="tab" id="tab-dh-m2" aria-controls="view-dh-m2" aria-selected="false" tabindex="-1" data-role="dh-m2">Add</button>
+        </div>
+        <figure class="sheet">
+          <div class="shot views" style="aspect-ratio:2000/1375" data-zoom>
+            <div class="view on" id="view-dh-m1" role="tabpanel" aria-labelledby="tab-dh-m1"><img src="img/dh-match-search.png" alt="Match Atlassian as a publisher, Search tab: four ranked candidates, each with a confidence level, where it came from, and a line saying why it is a candidate." width="2000" height="1375" loading="lazy" decoding="async"></div>
+            <div class="view" id="view-dh-m2" role="tabpanel" aria-labelledby="tab-dh-m2"><img src="img/dh-match-add.png" alt="The same dialog, Add tab: publisher name prefilled with the discovered name, website and support email, a Confirm and add to inventory checkbox on by default, and a warning that the match cannot be changed." width="2000" height="1375" loading="lazy" decoding="async"></div>
+          </div>
+          <figcaption class="titleblock"><span>Fig. P</span><span class="tb-title">Matching “Atlassian” as a publisher<span class="zoom-hint"> · hover to magnify</span></span><span>Real screens</span></figcaption>
+        </figure>
+        <div class="notes">
+          <div class="note" data-note="dh-m1"><ul class="ticks dots"><li>Four candidates, strongest first, each saying why it is one: an exact name match, a domain that resolves to a publisher, a former registered name, a difference of legal suffix only.</li><li>Each says where it came from, the tenant’s own inventory or the catalogue Oomnitza ships, and how confident the match is. A weak candidate is still shown, labelled weak, rather than hidden.</li><li>Candidates appear only after you have said what kind of thing this is, because that is the part a rule cannot decide for you.</li></ul></div>
+          <div class="note" data-note="dh-m2" hidden><ul class="ticks dots"><li>The name is prefilled with what was discovered, with a prompt to change it when that name is a domain or a product alias rather than what the company calls it.</li><li>Confirming and adding to the inventory is one checkbox, on by default, so matching and stocking are not two separate chores.</li><li>Matching an application takes a publisher, and creates it in the same step if it does not exist yet, rather than sending you away to make one first.</li></ul></div>
+        </div>
+
+        <h3 class="mono hr-h">Publishers come first</h3>
+        <p>An application belongs to a publisher, which is why a discovery cannot become an application until its publisher exists. That constraint is the reason the chain is ordered the way it is, and the reason the Add tab offers to create the publisher rather than refusing.</p>
+        <figure class="sheet">
+          <div class="shot" style="aspect-ratio:2000/1037" data-zoom><img src="img/dh-publishers.png" alt="Publishers: who makes the software you hold, with applications, licences, annual spend and which connector discovered each one, and a panel saying 138 discovered entries are still uncategorised." width="2000" height="1037" loading="lazy" decoding="async"></div>
+          <figcaption class="titleblock"><span>Fig. Q</span><span class="tb-title">Publishers, and what is still waiting behind them<span class="zoom-hint"> · hover to magnify</span></span><span>Real screens</span></figcaption>
+        </figure>
+        <p>Which closes the loop back to the top of this case study. Uncategorised discoveries are not wrong data, they are absent data, and completeness cannot see them: it only counts records that already exist. So Data Health gained a fifth measure, inventory coverage, and the backlog became the longest-open item on the page.</p>
       </section>
 
       <section id="dh-next" class="cs-sec">
